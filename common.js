@@ -22,37 +22,37 @@ while ( increaSe < 670 ) {
 let n = +prompt ( 'Enter numbers from 0 to 9');
 switch(n) {
 case 0:  
-alert ('zero');
+ alert ('zero');
 break;
 case 1:  
-alert ('one');
+ alert ('one');
 break;
 case 2:  
-alert ('two');
+ alert ('two');
 break;
 case 3:  
-alert ('three');
+ alert ('three');
 break;
 case 4:  
-alert ('four');
+ alert ('four');
 break;
 case 5:  
-alert ('five');
+ alert ('five');
 break;
 case 6:  
-alert ('six');
+ alert ('six');
 break;
 case 7:  
-alert ('seven');
+ alert ('seven');
 break;
 case 8:  
-alert ('eight');
+ alert ('eight');
 break;
 case 9:  
-alert ('nine');
+ alert ('nine');
 break;
 default:
-alert ('error');
+ alert ('error');
 }
 // 4.
 
@@ -62,21 +62,22 @@ function hellow() {
 hellow();
 // 5.
 
-function hellow2(name) {
-if (name = prompt('Your name?')){
-alert(`Hello ${name}${'!'}` );
-}
-else
-alert (`Hello ${'guest'}${'!'}` );
-}
-hellow2();
+let hellow2 =  (name, surname) => name + surname;
+ 
+
+console.log (hellow2('Ivan', 'Petrov'));
+hellow2('Ivan', 'Petrov');
 // 6. why errors?
 
 
-function repeat(str = '', n = 2 ){
-  return str = '', n+4; 
+function re(str, number=2) {
+  let updatedStr = '';
+  for(let i = 0; i < number; i++) {
+      updatedStr += str + '+' + 'yo!'; // updatedStr = updatedSTr + str
+  }
+  return updatedStr;
 }
-console.log(repeat( ));
+console.log(re("hi", 3));
 // 7.
 
 
@@ -106,7 +107,7 @@ function checkType (value) {
     console.log ("This value is string");
   }else   if (typeof value === 'boolean'){
   console.log ("This value is boolean");
- }else{}
+ }
 }
 checkType(true);
 // 9.
@@ -150,9 +151,33 @@ if ( num === nuM ){
 
 /*const str = "Helo";
 const str2 = "World!"*/
+
 function sum(str, str2){
+  let result = '';
 if ( typeof str === 'string' && typeof str2 === 'string'){
-  console.log (str+str2);}
+  result = str + str2;
+} 
+return result;
 }
-sum("Helo", " World!");
+console.log (sum());
 // 12.
+let object = {
+  age: 28,
+  hight: 1.70,
+  getAge() { return this.age; },
+  //   getAge: function() {return this.age;}
+  getHight() { return this.hight; },
+  'Hi Dude!': 45,
+  setAge(age) { 
+    if ( typeof age === 'number'){
+      this.age = age;
+    }
+  }
+};
+console.log(object.getAge());
+console.log(object.getHight());
+console.log(object['Hi Dude!']);
+object.age = 50;
+console.log(object.getAge());
+object.setAge(8);
+console.log(object.getAge());
